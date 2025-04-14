@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../commonResource/images/icons/logo-sm.png";
-import searchIcon from "../commonResource/images/icons/search-icon-sm.png";
-import cartIcon from "../commonResource/images/icons/cart-sm.png";
+import logo from "../../commonResource/images/icons/logo-sm.png";
+import searchIcon from "../../commonResource/images/icons/search-icon-sm.png";
+import cartIcon from "../../commonResource/images/icons/cart-sm.png";
 
 function Header() {
   return (

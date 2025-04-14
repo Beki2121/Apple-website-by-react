@@ -1,5 +1,5 @@
 import React from "react";
-import arcad from "../commonResource/images/icons/arcade.png";
+import arcad from "../../commonResource/images/icons/arcade.png";
 
 function Section6() {
   return (

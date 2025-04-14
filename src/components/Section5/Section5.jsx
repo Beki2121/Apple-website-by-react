@@ -1,7 +1,7 @@
 import React from "react";
-import tv from "../commonResource/images/icons/apple-tv-logo.png";
-import banner from "../commonResource/images/home/banker.png";
-import watch from "../commonResource/images/icons/watch-series5-logo.png";
+import tv from "../../commonResource/images/icons/apple-tv-logo.png";
+import banner from "../../commonResource/images/home/banker.png";
+import watch from "../../commonResource/images/icons/watch-series5-logo.png";
 export default function Section5() {
   return (
     <>
