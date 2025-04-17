@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import $ from "jquery";
+import "../Header/HeaderStyle.css";
 import logo from "../../commonResource/images/icons/logo-sm.png";
 import searchIcon from "../../commonResource/images/icons/search-icon-sm.png";
 import cartIcon from "../../commonResource/images/icons/cart-sm.png";
-
 function Header() {
+  useEffect(() => {
+    // Add click event for the navbar toggler
+    const $toggler = $(".navbar-toggler");
+    const $menu = $(".navbar-collapse");
+
+    $toggler.off("click").on("click", function () {
+      if (!$menu.is(":animated")) {
+        $menu.slideToggle(800); // Smooth toggle animation
+      }
+    });
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      $toggler.off("click");
+    };
+  }, []);
   return (
     <>
       <div className="nav-wrapper fixed-top">

@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
+import $ from "jquery";
+import "./FooterStyle.css";
 import flag from "../../commonResource/images/icons/16.png";
 
 function Footer() {
+  useEffect(() => {
+    // Add click event for toggling <ul> under <h3> on small screens
+    let plusExpander = $("h3");
+    plusExpander.on("click", function () {
+      if ($(window).width() < 768) {
+        $(this).next("ul").slideToggle(); // $(this) refers to the clicked <h3>.
+        $(this).toggleClass("slideup");
+
+        // Update the "+" to "x" or vice versa
+        if ($(this).hasClass("slideup")) {
+          $(this).text($(this).text().replace("+", "x"));
+        } else {
+          $(this).text($(this).text().replace("x", "+"));
+        }
+      }
+    });
+
+    // Reload the page when the window is resized
+    $(window).on("resize", function () {
+      location.reload();
+    });
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      plusExpander.off("click");
+      $(window).off("resize");
+    };
+  }, []);
+
   return (
     <>
       <footer className="footer-wrapper">
@@ -26,6 +57,7 @@ function Footer() {
               <a
                 href="https://www.goldmansachs.com/terms-and-conditions/Apple-Card-Customer-Agreement.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {" "}
                 Customer Agreement
