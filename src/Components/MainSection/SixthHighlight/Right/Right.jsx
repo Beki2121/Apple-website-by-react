@@ -1,0 +1,28 @@
+import React from 'react'
+
+function Right() {
+  return (
+    <>
+      <div className="right-side-wrapper col-sm-12 col-md-6">
+        <div className="right-side-container">
+          <div className="title-wraper">Apple Card Monthly Installments</div>
+          <div className="description-wraper">
+            Pay for your next iPhone over time, interest-free with Apple Card.
+          </div>
+          <div className="links-wrapper">
+            <ul>
+              <li>
+                <a href="">Learn more</a>
+              </li>
+              <li>
+                <a href="">Apply now</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Right
