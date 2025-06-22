@@ -1,26 +1,43 @@
-import React from "react";
-import Header from "./components/Header/Header";
-import Alert from "./components/Alert/Alert";
-import Footer from "./components/Footer/Footer";
-import Section1 from "./components/Section1/Section1";
-import Section2 from "./components/Section2/Section2";
-import Section3 from "./components/Section3/Section3";
-import Section4 from "./components/Section4/Section4";
-import Section5 from "./components/Section5/Section5";
-import Section6 from "./components/Section6/Section6";
+
+import MainSection from "./Components/MainSection/MainSection";
+import Mac from "./Components/MultiPages/Mac/Mac"
+import Iphone from "./Components/MultiPages/Iphone/Iphone";
+import Ipad from "./Components/MultiPages/Ipad/Ipad";
+import Watch from "./Components/MultiPages/Watch/Watch";
+import Tv from "./Components/MultiPages/Tv/Tv";
+import Music from "./Components/MultiPages/Music/Music";
+import Support from "./Components/MultiPages/Support/Support";
+import Cart from "./Components/MultiPages/Cart/Cart";
+import Four04 from "./Components/MultiPages/Four04/Four04";
+import Search from "./Components/MultiPages/Search/Search";
+import SharedComponents from "./Components/MultiPages/SharedComponents/SharedComponents";
+import SingleProductPage from "./Components/SingleProductPage/SingleProductPage";
+
+
+import {Route,Routes} from "react-router-dom"
+// import "./commonResource/css/bootstrap.css";
+import "./commonResource/css/styles.css";
+
 function App() {
   return (
-    <div>
-      <Header />
-      <Alert />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section6 />
-      <Footer />
-    </div>
+    <Routes>
+
+      <Route path= "/" element={<SharedComponents/>}>
+        <Route path="/" element={<MainSection/>}/>
+        <Route path="mac" element={<Mac/>}/>
+        <Route path="iphone" element={<Iphone/>}/>
+        <Route path="iphone/:productParam" element={<SingleProductPage/>}></Route>
+        <Route path="ipad" element={<Ipad/>}/>
+        <Route path="watch" element={<Watch/>}/>
+        <Route path="tv" element={<Tv/>}/>
+        <Route path="music" element={<Music/>}/>
+        <Route path="support" element={<Support/>}/>
+        <Route path="cart" element={<Cart/>}/>
+        <Route path="search" element={<Search/>}/>
+        <Route path="*" element= {<Four04/>}/>
+      </Route>
+
+    </Routes>
   );
 }
 

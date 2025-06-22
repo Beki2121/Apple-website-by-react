@@ -1,40 +1,30 @@
 import React, { useEffect } from "react";
-import $ from "jquery";
-import "./FooterStyle.css";
-import flag from "../../commonResource/images/icons/16.png";
+import flag from '../../commonResource/images/icons/16.png';
+import $ from 'jquery'
 
 function Footer() {
+
   useEffect(() => {
-    // Add click event for toggling <ul> under <h3> on small screens
-    let plusExpander = $("h3");
-    plusExpander.on("click", function () {
-      if ($(window).width() < 768) {
-        $(this).next("ul").slideToggle(); // $(this) refers to the clicked <h3>.
-        $(this).toggleClass("slideup");
 
-        // Update the "+" to "x" or vice versa
-        if ($(this).hasClass("slideup")) {
-          $(this).text($(this).text().replace("+", "x"));
-        } else {
-          $(this).text($(this).text().replace("x", "+"));
+    return () =>{
+
+      const plusExpander = $("h3");
+      plusExpander.on("click", function () {
+        if ($(window).width() < 768) {
+          $(this).next("ul").slideToggle(); //$(this) refers to the clicked <h3>.
+          $(this).toggleClass("slideup");
         }
-      }
-    });
+      })
 
-    // Reload the page when the window is resized
-    $(window).on("resize", function () {
-      location.reload();
-    });
+      // to resize when the window resize
+      $(window).on("resize",function(){
+        location.reload();
+      })
+  }})
 
-    // Cleanup event listeners on component unmount
-    return () => {
-      plusExpander.off("click");
-      $(window).off("resize");
-    };
-  }, []);
 
   return (
-    <>
+    <div>
       <footer className="footer-wrapper">
         <div className="container">
           <div className="upper-text-container">
@@ -57,7 +47,6 @@ function Footer() {
               <a
                 href="https://www.goldmansachs.com/terms-and-conditions/Apple-Card-Customer-Agreement.pdf"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 {" "}
                 Customer Agreement
@@ -72,9 +61,7 @@ function Footer() {
             <p>
               2. Subscription required.
               <br />
-              <br />
               Magic Keyboard sold separately.
-              <br />
               <br />
               Apple TV+ is $4.99/month after free trial. One subscription per
               Family Sharing group. Offer good for 3 months after eligible
@@ -83,6 +70,7 @@ function Footer() {
               <a href="https://www.apple.com/promo/">terms </a> apply.
             </p>
           </div>
+
           <div className="footer-links-wrapper row">
             <div className="links-wrapper-1 col-sm-12 col-md">
               <h3>Shop and Learn</h3>
@@ -281,10 +269,12 @@ function Footer() {
               </ul>
             </div>
           </div>
+
           <div className="my-apple-wrapper">
             More ways to shop: <a href="#">Find an Apple Store</a> or{" "}
             <a href="#">other retailer</a> near you. Or call 1-800-MY-APPLE.
           </div>
+
           <div className="copyright-wrapper row">
             <div className="copyright col-sm-12 order-2 col-md-8 order-md-1 col-lg-4 order-lg-1">
               Copyright &copy; 2020 Apple Inc. All rights reserved.
@@ -308,16 +298,17 @@ function Footer() {
                 </li>
               </ul>
             </div>
+
             <div className="footer-country  col-sm-12 order-1 col-md-4 order-md-2 text-md-right col-lg-2 order-lg-3">
               <div className="flag-wrapper">
-                <img src={flag} alt="Flag" />
+                <img src={flag} />
               </div>{" "}
               <div className="footer-country-name">United States</div>
             </div>
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 

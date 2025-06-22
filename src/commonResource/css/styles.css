@@ -51,6 +51,7 @@ img {
 }
 .footer-wrapper ul a {
 	color: #515154;
+	text-decoration: none;
 }
 .my-apple-wrapper {
 	padding-bottom: 15px;
@@ -240,15 +241,16 @@ img {
 	padding: 340px 0 0px;
 }
 /* Fourth section */
-.fourth-heghlight-wrapper .left-side-wrapper .left-side-container{
-	background-image:  url("../images/home/iphone11-colored.jpg"); 
+ .left-side-wrapper .left-side-container{
+	
+	background-image:  url("../../commonResource/images/home/iphone11-colored.jpg"); 
 	background-color: #000;
 	padding-top: 35px;
 	margin: 0 0 10px 0;
 	background-size: cover;		
 }
-.fourth-heghlight-wrapper .right-side-wrapper .right-side-container{
-	background-image:  url("../images/home/apple-blue-logo.jpg"); 
+ .right-side-wrapper .right-side-container{
+	background-image:  url("../../commonResource/images/home/apple-blue-logo.jpg"); 
 	background-color: #165ca9;
 	background-position: bottom;
 	padding-top: 35px;
@@ -258,7 +260,7 @@ img {
 .links-wrapper.white li a {
 	color: #fff;
 }
-.fourth-heghlight-wrapper .right-side-wrapper .title-wraper {
+ .right-side-wrapper .title-wraper {
     max-width: 380px;
 }
 /*Third section*/
@@ -320,6 +322,21 @@ img {
 	max-width: 90%;
 	margin: 0 auto;
 }
+
+button {
+  padding: 10px 20px;
+  background-color: #27C6FB; 
+  /* background-color: #F9B200;  */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color:#F9B200; /* Darker blue */
+}
 /*Media Query*/
 /* Footer */
 @media (max-width: 768px){
@@ -367,10 +384,10 @@ img {
 	    margin: 5px 10px 5px 5px;
 	}
 	/*fourth section*/
-	.fourth-heghlight-wrapper .left-side-wrapper .left-side-container {
+	 .left-side-wrapper .left-side-container {
 	    margin: 10px 5px 5px 10px;
 	}
-	.fourth-heghlight-wrapper .right-side-wrapper .right-side-container {
+	.right-side-wrapper .right-side-container {
 	    margin: 10px 10px 5px 5px;
 	}		
 	.title-wraper.bold {
@@ -399,6 +416,8 @@ img {
 		margin: 0 auto;
 	}	
 }
+
+
 @media (min-width: 992px) {
 	/*Footer styling*/
 	.copyright {
