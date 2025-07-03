@@ -1,16 +1,15 @@
-import React from 'react'
-import Header from '../../Header/Header'
-import Footer from '../../Footer/Footer'
-import { Outlet } from 'react-router-dom'
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 function SharedComponents() {
   return (
     <>
-        <Header/>
-        <Outlet/>
-        <Footer/>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default SharedComponents
+export default SharedComponents;
